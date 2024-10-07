@@ -5,12 +5,31 @@
 
 = Architecture 
 
-Introduction for the architecture of this solution pattern.
-
-== Common Challenges 
-
 [#tech_stack]
 == Technology Stack
+
+*** What is OpenShift Virtualization
++
+Red Hat OpenShift Virtualization is a certified operator in Red Hat OpenShift and is based on the KubeVirt Kubernetes virtualization add-on, which enables managing VM workloads alongside container workloads.
++					
+KubeVirt delivers container-native virtualization by using the Kernel-based Virtual Machine (KVM) Linux Kernel hypervisor within a Kubernetes container. Started by Red Hat, KubeVirt is now a Cloud Native Computing Foundation Incubation project and an open source upstream project. It provides similar capabilities to those of traditional  hypervisor solutions, with the scheduling and orchestrational efficiency of Kuberenetes to provide a mature virtualization platform. 
++
+Adding OpenShift Virtualization to a Red Hat OpenShift cluster enables deploying and managing virtualized workloads with the same hardware, environment, and tool set that the containerized applications use. Managing virtual machines alongside containerized deployments in a single cluster provides both administrative and economical advantages such as unifying the management interface that system administrators use to improve application reliability while reducing operational overhead and simplifying their management tasks
++
+image::ocp_virt_1.png[width=40%]
++
+*** OpenShift Virtualization operator components
++
+With the OpenShift Virtualization operator installed on a cluster, these resources are available on the cluster to manage virtual machines.
++
+- virt-controller works with Cluster API server to orchestrate virtual machine requests.
+
++
+- virt-handler runs in a daemonset pod and coordinates with the VM pod that runs the virt-launcher process to deliver the VM actions.
++
+- libvirtd daemon within the VM pod provides the functionality for performing specific VM actions at the kernel level.
++
+image::ocp_virt_2.png[width=80%]
 
 // Change links and text here as you see fit.
 * Red Hat supported products
