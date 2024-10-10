@@ -27,6 +27,7 @@ video::5zossjikJm8[youtube, width=800, height=480]
 
 Here are the interactive walkthroughs:
 
+- https://app.arcade.software/share/S33zyORtlafU4N3W4XUG[Configuring ROSA for OpenShift Virtualization]
 
 - https://app.arcade.software/share/T6m1DSH4pqRtVuJpxN1s[Create Virtual Machines using OpenShift GitOps]
 
