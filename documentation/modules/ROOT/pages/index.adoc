@@ -1,4 +1,4 @@
-= Solution Patterns: Modernize your VM workloads using ROSA with OCP Virtualization
+= Solution Patterns: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :page-layout: home
 :sectnums:
 :sectlinks:

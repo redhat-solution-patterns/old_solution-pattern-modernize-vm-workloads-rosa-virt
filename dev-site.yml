@@ -13,7 +13,7 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: Modernize your VM workloads using ROSA with OCP Virtualization
+    title: Modernize your VM workloads using ROSA with OpenShift Virtualization
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js
