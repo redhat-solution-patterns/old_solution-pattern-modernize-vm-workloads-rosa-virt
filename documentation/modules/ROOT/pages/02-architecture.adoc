@@ -1,4 +1,4 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
