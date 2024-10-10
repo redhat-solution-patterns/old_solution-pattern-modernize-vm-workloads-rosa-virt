@@ -31,6 +31,16 @@ With the OpenShift Virtualization operator installed on a cluster, these resourc
 +
 image::ocp_virt_2.png[width=80%]
 +
+Some benefits of managing VMs through OpenShift Virtualization are as follows:
+
+    * Provides new custom resource definitions (CRDs) and controllers to extend Kubernetes functions by enabling virtualization-related tasks.
+ 	* Supports creating and managing Linux and Windows VMs by using custom resources (CRs), the web console, the CLI, and YAML definition templates to customize VMs easily.
+ 	* Enables creating VMs by cloning a persistent volume claim (PVC) that points to an existing VM's persistent volume (PV).
+ 	* Supports importing and managing VMs that are created outside the OpenShift cluster by making use of the Migration Toolkit for Virtualization.		
+    * Permits moving a Virtual Machine Instance (VMI) and its resources between cluster nodes with the help of live migration strategies, which eliminates the need to stop VMs before moving them.
+    * Enables the deployment of virtual machines using pipelines, a methodology typically found in cloud-native approaches. This integration facilitates a more streamlined and automated deployment process, enhancing efficiency and consistency.
+    * Empowers IT teams to adopt a modern approach to VM management, incorporating practices like DevOps and CI/CD, which can lead to more agile and responsive operations.
+
 
 *** ROSA Architecture Overview:
 +
