@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization :: Solution Patterns for Cloud Native Architectures</title>
+    <link rel="canonical" href="https://solutionpatterns.io/solution-pattern/04-workshop.html">
+    <link rel="prev" href="03-demo.html">
+    <link rel="next" href="developer-resources.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESYV8XKFWR"></script>
+<script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', 'G-ESYV8XKFWR')</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" style="font-size: 20px; color: white"
+        href="https://solutionpatterns.io">
+        <img src="../_/img/logo.png" height="35px" alt="Solution Patterns">&nbsp; Solution Patterns for Cloud Native Architectures</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Architectures &amp; Patterns</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
+            <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html"  target="_blank">Solution Patterns </a>
+            <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
+            <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
+            <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
+          </div>
+        </div>
+
+          <a class="navbar-item" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
+          <a class="navbar-item" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="solution-pattern" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html" class=" query-params-link">Modernize your VM workloads using ROSA with OpenShift Virtualization</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">1. Home page</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#use-cases">1.1 Use cases</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#_the_story_behind_this_solution_pattern">1.2 The story behind this solution pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#_the_solution">1.3 The solution</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-architecture.html">2. Architecture</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#tech_stack">2.1. Technology stack</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-demo.html">3. See the Solution in Action</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">Explore Red Hat Solution Patterns</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modernize your VM workloads using ROSA with OpenShift Virtualization</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Modernize your VM workloads using ROSA with OpenShift Virtualization</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Modernize your VM workloads using ROSA with OpenShift Virtualization</a></li>
+    <li><a href="04-workshop.html">4. Workshop</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-modernize-vm-workloads-using-rosa-with-ocp-virt/edit/main/documentation/modules/ROOT/pages/04-workshop.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization</h1>
+<h1 id="_workshop" class="sect0"><a class="anchor" href="#_workshop"></a><a class="link" href="#_workshop">Workshop</a></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>Here are the workshops which are already available on demo.redhat.com:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://demo.redhat.com/catalog?search=tril&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa-with-trilio.prod">Backup and Recovery of Red Hat OpenShift Virtualization VMs using Trilio (ROSA)</a></p>
+</li>
+<li>
+<p><a href="https://demo.redhat.com/catalog?search=factory&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod">OpenShift Virtualization Migration Factory Demo (ROSA)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now we will be looking at our first scenario: Create Virtual Machines using GitOps on ROSA.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installing the environment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create an environment using this <a href="https://demo.redhat.com/catalog?search=factory&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod">link</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Delivering the workshop</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to the bastion host available in the above CI.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_6.png" alt="ocp virt 6" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now fork this <a href="https://github.com/gmidha1/virtdemos.git">repo</a> under your github account and after that clone the repo into the bastion host.
+Configure oc cli using the admin logins.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_7.png" alt="ocp virt 7" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Run ./bootstrap.sh from virtdemos directory. It will deploy the OpenShift GitOps operator.</p>
+</li>
+<li>
+<p>After 2 mins, you will be able to see the OpenShift GitOps operator under Installed operators in OpenShift Console.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_8.png" alt="ocp virt 8" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now let us get the url from Routes under Networking for OpenShift GitOps server(ArgoCD) and open this url.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_9.png" alt="ocp virt 9" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>It will open the ArgoCD login screen, now click on “Login via OpenShift” and enter the credentials for OpenShift. After that we will see this screen:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_10.png" alt="ocp virt 10" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now we will create a RHEL VM by creating an argocd app using this cli from virtdemos directory: oc apply -f apps/ap.yaml</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_11.png" alt="ocp virt 11" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>It will create an application in ArgoCD which in turn will create a RHEL Virtual Machine in OpenShift as shown in below images.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_12.png" alt="ocp virt 12" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_13.png" alt="ocp virt 13" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>We can see this virtual machine from the OpenShift console &#8594; Virtualization &#8594; Virtual Machines and we can connect it to the VM using the password we provided in rhel vm yaml.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_14.png" alt="ocp virt 14" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_15.png" alt="ocp virt 15" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_16.png" alt="ocp virt 16" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_17.png" alt="ocp virt 17" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now we have successfully deployed a RHEL VM using GitOps in OpenShift and are able to access it using the credentials.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="03-demo.html" class="query-params-link">3. See the Solution in Action</a></span>
+  <span class="next"><a href="developer-resources.html" class="query-params-link">5. Developer Resources</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img
+          src="../_/img/app-services-logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"  href="https://redhat.com" ></a>
+</footer><script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
